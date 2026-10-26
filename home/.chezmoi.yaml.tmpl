@@ -1,0 +1,5 @@
+{{- $platform := promptStringOnce . "platform" "Platform" -}}
+{{- $profile  := promptStringOnce . "profile" "Profile" -}}
+data:
+  platform: {{ $platform | quote }}
+  profile: {{ $profile | quote }}
