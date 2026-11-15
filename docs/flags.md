@@ -3,9 +3,15 @@
 Answered once per machine, stored locally by chezmoi (`home/.chezmoi.yaml.tmpl`).
 Available in templates as `.runner` and `.profile`.
 
-Layers, outside in: `runner` wraps the OS, `chezmoi.os` is the OS chezmoi runs in
-(the guest OS, never the physical host), `profile` is who the work is for.
-A Tart macOS VM is `darwin` + `tart`; a Tart Linux VM is `linux` + `tart`.
+```
+physical host              (invisible to chezmoi)
+└─ runner                  tart | incus | orbstack | cloud | bare
+   └─ OS                   chezmoi.os: darwin | linux | windows
+      └─ profile           personal | employer | client
+
+e.g.  Tart macOS VM   =  tart > darwin > personal
+      Tart Linux VM   =  tart > linux  > personal
+```
 
 | Flag | Meaning | Examples |
 |---|---|---|
