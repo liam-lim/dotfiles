@@ -4,10 +4,21 @@ Answered once per machine, stored locally by chezmoi (`home/.chezmoi.yaml.tmpl`)
 Available in templates as `.runner` and `.profile`.
 
 ```
-physical host              (invisible to chezmoi)
-└─ runner                  tart | incus | orbstack | cloud | bare
-   └─ OS                   chezmoi.os: darwin | linux | windows
-      └─ profile           personal | employer | client
+┌─ physical host (invisible to chezmoi) ───────────────────────┐
+│                                                              │
+│  ┌─ runner: tart | incus | orbstack | cloud | bare ───────┐  │
+│  │                                                        │  │
+│  │  ┌─ OS: darwin | linux | windows (chezmoi.os) ──────┐  │  │
+│  │  │                                                  │  │  │
+│  │  │  ┌─ profile: personal | employer | client ────┐  │  │  │
+│  │  │  │                                            │  │  │  │
+│  │  │  └────────────────────────────────────────────┘  │  │  │
+│  │  │                                                  │  │  │
+│  │  └──────────────────────────────────────────────────┘  │  │
+│  │                                                        │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
 
 e.g.  Tart macOS VM   =  tart > darwin > personal
       Tart Linux VM   =  tart > linux  > personal
