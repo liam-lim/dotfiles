@@ -1,7 +1,6 @@
 # Flags
 
 Answered once per machine, stored locally by chezmoi (`home/.chezmoi.yaml.tmpl`).
-Available in templates as `.runner` and `.profile`.
 
 ```
 ┌─ physical host (invisible to chezmoi) ───────────────────────┐
@@ -19,9 +18,6 @@ Available in templates as `.runner` and `.profile`.
 │  └────────────────────────────────────────────────────────┘  │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
-
-e.g.  Tart macOS VM   =  tart > darwin > personal
-      Tart Linux VM   =  tart > linux  > personal
 ```
 
 | Flag | Meaning | Examples |
