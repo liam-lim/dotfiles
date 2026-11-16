@@ -1,0 +1,4 @@
+{{ if ne .chezmoi.os "darwin" }}
+# macOS-only
+.config/macos
+{{ end }}
