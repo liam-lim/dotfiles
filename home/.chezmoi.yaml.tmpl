@@ -1,0 +1,5 @@
+{{- $runner  := promptStringOnce . "runner" "Runner" -}}
+{{- $profile := promptStringOnce . "profile" "Profile" -}}
+data:
+  runner: {{ $runner | quote }}
+  profile: {{ $profile | quote }}
